@@ -91,6 +91,7 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                         </tbody>
                     </table>
                 </div>
+                <a href="generate_pdf.php" class="btn btn-primary">Generate PDF</a>
             </div>
         </div>
     </div>
