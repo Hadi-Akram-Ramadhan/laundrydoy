@@ -142,11 +142,6 @@
                     <button type="submit" class="btn btn-primary w-100 btn-login mb-3">
                         Sign In <i class="bi bi-arrow-right-circle ms-1"></i>
                     </button>
-
-                    <div class="text-center">
-                        <span class="text-muted small">Don't have an account?</span>
-                        <a href="#" class="text-decoration-none small">Create Account</a>
-                    </div>
                 </form>
             </div>
         </div>
