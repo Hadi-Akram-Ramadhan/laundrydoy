@@ -16,7 +16,8 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
 <div class="container-fluid">
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Dashboard</h4> </div>
+            <h4 class="page-title">Dashboard</h4>
+        </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
                 <li><a href="#">Dashboard</a></li>
@@ -37,7 +38,8 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
                     <li>
                         <div id="sparklinedash"></div>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success"><?= $tahun['total'] ?></span></li>
+                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
+                            class="counter text-success"><?= $tahun['total'] ?></span></li>
                 </ul>
             </div>
         </div>
@@ -48,7 +50,8 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
                     <li>
                         <div id="sparklinedash2"></div>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple"><?= $bulan['total'] ?></span></li>
+                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span
+                            class="counter text-purple"><?= $bulan['total'] ?></span></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +62,8 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
                     <li>
                         <div id="sparklinedash3"></div>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info"><?= $minggu['total'] ?></span></li>
+                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
+                            class="counter text-info"><?= $minggu['total'] ?></span></li>
                 </ul>
             </div>
         </div>
@@ -81,21 +85,22 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
                         </thead>
                         <tbody>
                             <?php $no=1; foreach($penjualan as $transaksi): ?>
-                                <tr>
-                                    <td><?= $no++ ?></td>
-                                    <td><?= $transaksi['nama_paket'] ?></td>
-                                    <td><?= $transaksi['jumlah_paket'] ?></td>
-                                    <td><?= $transaksi['tgl_pembayaran'] ?></td>
-                                    <td><?= $transaksi['total'] ?></td>                                    
-                                </tr>
+                            <tr>
+                                <td><?= $no++ ?></td>
+                                <td><?= $transaksi['nama_paket'] ?></td>
+                                <td><?= $transaksi['jumlah_paket'] ?></td>
+                                <td><?= $transaksi['tgl_pembayaran'] ?></td>
+                                <td><?= $transaksi['total'] ?></td>
+                            </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
+                <a href="generate_pdf.php" class="btn btn-primary">Generate PDF</a>
             </div>
         </div>
     </div>
 </div>
 <?php
 require 'layout_footer.php';
-?> 
+?>
