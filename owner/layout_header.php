@@ -66,7 +66,7 @@
                         </b>
                         <!-- Logo text image you can use text also -->
                         <span class="hidden-xs text-dark">
-                            APP
+                            doydev
                         </span>
                     </a>
                 </div>

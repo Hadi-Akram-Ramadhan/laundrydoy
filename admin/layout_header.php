@@ -77,8 +77,6 @@
                             href="javascript:void(0)"><i class="fa fa-bars"></i></a>
                     </li>
                     <li>
-                        <a class="profile-pic" href="#"> <img src="../assets/plugins/images/users/varun.jpg"
-                                alt="user-img" width="36" class="img-circle"><b class="hidden-xs">ADMIN</b></a>
                     </li>
                 </ul>
             </div>
