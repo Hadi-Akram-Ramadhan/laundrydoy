@@ -13,6 +13,7 @@ $cek = mysqli_num_rows($row);
 if($cek > 0){
     if($data['role'] == 'admin'){
         $_SESSION['role'] = 'admin';
+        $_SESSION['nama_user'] = $data['nama_user'];
         $_SESSION['username'] = $data['username'];
         $_SESSION['user_id'] = $data['id_user'];
         $_SESSION['outlet_id'] = $data['outlet_id'];
