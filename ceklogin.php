@@ -20,12 +20,14 @@ if($cek > 0){
         header('location:admin');
     }else if($data['role'] == 'kasir'){
         $_SESSION['role'] = 'kasir';
+        $_SESSION['nama_user'] = $data['nama_user'];
         $_SESSION['username'] = $data['username'];
         $_SESSION['user_id'] = $data['id_user'];
         $_SESSION['outlet_id'] = $data['outlet_id'];
         header('location:kasir/transaksi.php');
     }else if($data['role'] == 'owner'){
         $_SESSION['role'] = 'owner';
+        $_SESSION['nama_user'] = $data['nama_user'];
         $_SESSION['username'] = $data['username'];
         $_SESSION['user_id'] = $data['id_user'];
         $_SESSION['outlet_id'] = $data['outlet_id'];
