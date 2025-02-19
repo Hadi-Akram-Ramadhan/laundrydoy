@@ -2,7 +2,7 @@
 session_start();
 $conn = mysqli_connect('localhost','root','','ujikom_laundry');
 
-$username = stripslashes($_POST['username']);
+$username = $_POST['username'];
 $password = md5($_POST['password']);
 $query = "SELECT * FROM user where username='$username' AND password = '$password'";
 $row = mysqli_query($conn,$query);
