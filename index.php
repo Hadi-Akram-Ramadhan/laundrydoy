@@ -18,12 +18,12 @@
     }
 
     .left-side {
-        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        background: #1b263b;
         padding: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color: white;
+        color: #c1c1c1;
         position: relative;
         overflow: hidden;
     }
@@ -40,6 +40,7 @@
     }
 
     .right-side {
+        background: #0d1b2a;
         padding: 3rem;
         display: flex;
         align-items: center;
@@ -49,14 +50,15 @@
     .login-form {
         width: 100%;
         max-width: 400px;
-        background: white;
+        background: #1b263b;
+        color: #c1c1c1;
         padding: 2.5rem;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     .form-control {
-        background: #f8fafc;
+        background: #e0e1dd;
         border: none;
         padding: 0.8rem 1rem;
         border-radius: 10px;
@@ -65,11 +67,11 @@
 
     .form-control:focus {
         background: #fff;
-        box-shadow: 0 0 0 2px #6366f1;
+        box-shadow: 0 0 0 2px #0d1b2a;
     }
 
     .btn-login {
-        background: #6366f1;
+        background: #415a77;
         border: none;
         padding: 0.8rem;
         border-radius: 10px;
@@ -78,7 +80,7 @@
     }
 
     .btn-login:hover {
-        background: #4f46e5;
+        background: #415a77;
         transform: translateY(-2px);
     }
 
@@ -97,6 +99,11 @@
         .right-side {
             padding: 2rem;
         }
+    }
+
+    .haf {
+        background: #e0e1dd;
+        max-height: 50px;
     }
     </style>
 </head>
@@ -119,19 +126,20 @@
                 <form method="POST" action="ceklogin.php">
                     <div class="mb-3">
                         <div class="input-group">
-                            <span class="input-group-text border-0 bg-light">
+                            <span class="haf input-group-text border-0">
                                 <i class="bi bi-person text-muted"></i>
                             </span>
-                            <input type="text" class="form-control" name="username" placeholder="Username" required>
+                            <input type="text" class="doy form-control" name="username" placeholder="Username" required>
                         </div>
                     </div>
 
                     <div class="mb-4">
                         <div class="input-group">
-                            <span class="input-group-text border-0 bg-light">
+                            <span class="haf input-group-text border-0">
                                 <i class="bi bi-lock text-muted"></i>
                             </span>
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            <input type="password" class="haf form-control" name="password" placeholder="Password"
+                                required>
                         </div>
                     </div>
 
