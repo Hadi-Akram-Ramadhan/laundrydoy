@@ -19,6 +19,11 @@ if($cek > 0){
         $_SESSION['outlet_id'] = $data['outlet_id'];
         header('location:admin');
     }else if($data['role'] == 'kasir'){
+        if(empty($data['outlet_id'])) {
+            $msg = 'Outlet belum diatur untuk user ini';
+            header('location:index.php?msg='.$msg);
+            exit;
+        }
         $_SESSION['role'] = 'kasir';
         $_SESSION['nama_user'] = $data['nama_user'];
         $_SESSION['username'] = $data['username'];
@@ -26,6 +31,11 @@ if($cek > 0){
         $_SESSION['outlet_id'] = $data['outlet_id'];
         header('location:kasir/transaksi.php');
     }else if($data['role'] == 'owner'){
+        if(empty($data['outlet_id'])) {
+            $msg = 'Outlet belum diatur untuk user ini';
+            header('location:index.php?msg='.$msg);
+            exit;
+        }
         $_SESSION['role'] = 'owner';
         $_SESSION['nama_user'] = $data['nama_user'];
         $_SESSION['username'] = $data['username'];

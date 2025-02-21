@@ -4,7 +4,11 @@ require'functions.php';
 $query = 'SELECT outlet.*, user.nama_user,user.id_user FROM outlet LEFT JOIN user ON user.outlet_id = outlet.id_outlet WHERE id_outlet = ' . stripslashes($_GET['id']);
 $data = ambilsatubaris($conn,$query);
 
-$query2 = 'SELECT user.*,outlet.nama_outlet FROM outlet RIGHT JOIN user ON user.outlet_id = outlet.id_outlet WHERE user.role = "owner" order by user.outlet_id asc';
+$query2 = 'SELECT user.*, outlet.nama_outlet 
+           FROM outlet 
+           RIGHT JOIN user ON user.outlet_id = outlet.id_outlet 
+           WHERE user.role IN ("owner", "kasir") 
+           ORDER BY user.outlet_id ASC';
 $data2 = ambildata($conn,$query2);
 if(isset($_POST['btn-simpan'])){
     $nama   = stripslashes($_POST['nama_outlet']);
@@ -105,7 +109,7 @@ require'layout_header.php';
                                 <?php if ($owner['outlet_id'] == null): ?>
                                 ( Belum memiliki outlet )
                                 <?php else: ?>
-                                ( Owner di <?= htmlspecialchars($owner['nama_outlet']); ?> )
+                                ( <?= ucfirst($owner['role']); ?> di <?= htmlspecialchars($owner['nama_outlet']); ?> )
                                 <?php endif ?>
                             </option>
                             <?php endforeach ?>
@@ -122,7 +126,7 @@ require'layout_header.php';
                                 <?php if ($owner['outlet_id'] == null): ?>
                                 ( Belum memiliki outlet )
                                 <?php else: ?>
-                                ( Owner di <?= htmlspecialchars($owner['nama_outlet']); ?> )
+                                ( <?= ucfirst($owner['role']); ?> di <?= htmlspecialchars($owner['nama_outlet']); ?> )
                                 <?php endif ?>
                             </option>
                             <?php endforeach ?>
