@@ -40,26 +40,50 @@
 <![endif]-->
     <!-- Your custom colors -->
     <style>
+    /* Navbar & Header */
     .navbar {
-        background-color: #2196F3 !important;
+        background-color: #0d1b2a !important;
+    }
+
+    .navbar-header {
+        background-color: #0d1b2a !important;
+    }
+
+    .top-left-part {
+        background-color: #0d1b2a !important;
     }
 
     .logo b,
     .logo span {
-        color: black !important;
+        color: #e0e1dd !important;
     }
 
+    /* Profile section di header */
+    .profile-pic b {
+        color: white !important;
+    }
+
+    .nav.navbar-top-links>li>a {
+        color: white !important;
+    }
+
+    /* Sidebar */
     .sidebar {
-        background-color: #1976D2 !important;
+        background-color: #0d1b2a !important;
     }
 
     .sidebar-nav {
-        background-color: #1976D2 !important;
+        background-color: #0d1b2a !important;
     }
 
-    /* Ganti warna text sidebar */
+    /* Text di sidebar */
     .sidebar .nav-second-level li a,
     .sidebar .nav>li>a {
+        color: white !important;
+    }
+
+    /* Sidebar header */
+    .sidebar-head h3 span {
         color: white !important;
     }
     </style>
