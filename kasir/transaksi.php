@@ -13,7 +13,7 @@ $data = ambildata($conn,$query);
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
-              <li><a href="#">Paket</a></li>
+                <li><a href="#">Paket</a></li>
             </ol>
         </div>
         <!-- /.col-lg-12 -->
@@ -24,7 +24,7 @@ $data = ambildata($conn,$query);
                 <div class="row">
                     <div class="col-md-6">
                         <a href="transaksi_cari_member.php" class="btn btn-primary box-title"><i
-                                class="fa fa-plus fa-fw"></i> Tambah</a>
+                                class="fa fa-plus fa-fw"></i> Tambah.</a>
                         <a href="transaksi_konfirmasi.php" class="btn btn-primary box-title"><i
                                 class="fa fa-check fa-fw"></i> Konfirmasi Pembayaran</a>
                     </div>
