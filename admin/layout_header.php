@@ -40,6 +40,16 @@
 <![endif]-->
     <!-- Your custom colors -->
     <style>
+    /* Main Background */
+    body,
+    #page-wrapper {
+        background: #415a77 !important;
+    }
+
+    .container-fluid {
+        background: #415a77 !important;
+    }
+
     /* Navbar & Header */
     .navbar {
         background-color: #0d1b2a !important;
@@ -49,22 +59,18 @@
         background-color: #0d1b2a !important;
     }
 
-    .top-left-part {
-        background-color: #0d1b2a !important;
-    }
-
     .logo b,
     .logo span {
         color: #e0e1dd !important;
     }
 
-    /* Profile section di header */
+    /* Profile section */
     .profile-pic b {
-        color: white !important;
+        color: #e0e1dd !important;
     }
 
     .nav.navbar-top-links>li>a {
-        color: white !important;
+        color: #e0e1dd !important;
     }
 
     /* Sidebar */
@@ -73,18 +79,99 @@
     }
 
     .sidebar-nav {
+        background-color: #1b263b !important;
+    }
+
+    .sidebar .nav-second-level li a,
+    .sidebar .nav>li>a {
+        color: #e0e1dd !important;
+    }
+
+    .sidebar-head h3 span {
+        color: #e0e1dd !important;
+    }
+
+    /* Dashboard title */
+    .bg-title {
+        background: #1b263b !important;
+        border-bottom: 1px solid #778da9;
+    }
+
+    .page-title-header {
+        color: #e0e1dd !important;
+    }
+
+    tr {
+        color: #e0e1dd;
+    }
+
+    /* Cards/Boxes */
+    .white-box {
+        background: #1b263b;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        color: #e0e1dd;
+    }
+
+    .analytics-info {
+        transition: all 0.3s ease;
+    }
+
+    .analytics-info:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .box-title {
+        color: #e0e1dd;
+        font-weight: 600;
+    }
+
+    /* Table styling */
+    .table {
+        background: #778da9;
+        border-radius: 8px;
+        color: #e0e1dd;
+    }
+
+    .table thead th {
+        background: #415a77;
+        color: #e0e1dd;
+        border-bottom: 2px solid #1b263b;
+    }
+
+    .table tbody tr:hover {
+        background-color: #415a77;
+    }
+
+    /* Button */
+    .btn-success {
+        background: #1b263b;
+        border: none;
+        border-radius: 4px;
+        color: #e0e1dd;
+    }
+
+    .btn-success:hover {
+        background: #0d1b2a;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Text colors */
+    .text-success,
+    .text-purple,
+    .text-info {
+        color: #e0e1dd !important;
+    }
+
+    .top-left-part {
         background-color: #0d1b2a !important;
     }
 
-    /* Text di sidebar */
-    .sidebar .nav-second-level li a,
-    .sidebar .nav>li>a {
-        color: white !important;
-    }
-
-    /* Sidebar header */
-    .sidebar-head h3 span {
-        color: white !important;
+    a,
+    .page-title {
+        color: #e0e1dd !important;
     }
     </style>
 </head>

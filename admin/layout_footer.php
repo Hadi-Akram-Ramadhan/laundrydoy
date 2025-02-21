@@ -1,10 +1,5 @@
 <!-- /.container-fluid -->
-<footer class="footer text-center"></footer>
-</div>
-<!-- ============================================================== -->
-<!-- End Page Content -->
-<!-- ============================================================== -->
-</div>
+
 <!-- ============================================================== -->
 <!-- End Wrapper -->
 <!-- ============================================================== -->
@@ -93,22 +88,7 @@ $('#btn-refresh').on('click', () => {
 });
 </script>
 
-<?php if($_GET['crud'] == 'true'):?>
-<script type="text/javascript">
-var title = "<?php echo $_GET['title']?>";
-var msg = "<?php echo $_GET['msg']?>";
-var type = "<?php echo $_GET['type']?>";
-$.toast({
-    heading: title,
-    text: msg,
-    position: 'top-right',
-    loaderBg: '#fff',
-    icon: type,
-    hideAfter: 3500,
-    stack: 6
-})
-</script>
-<?php endif; ?>
+
 </body>
 
 </html>
