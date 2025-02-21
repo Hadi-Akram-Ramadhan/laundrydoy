@@ -112,7 +112,7 @@
     <div class="login-container row g-0">
         <div class="col-md-6 left-side">
             <div class="position-relative">
-                <div class="brand-logo">🧺 Laundry Pro</div>
+                <div class="brand-logo">🧺 Laundry Doydev</div>
                 <h2 class="mb-4">
                     <span id="welcome-text"></span>
                 </h2>

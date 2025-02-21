@@ -31,7 +31,9 @@
 <script src="../assets/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
 <script type="text/javascript" src="../assets/DataTables/datatables.min.js"></script>
 <!-- Custom Theme JavaScript -->
-<?php if($title=='dashboard'):?>
+<?php
+$title = isset($title) ? $title : '';
+if($title=='dashboard'):?>
 <script src="../assets/js/dashboard1.js"></script>
 <?php endif;?>
 <script src="../assets/js/custom.min.js"></script>

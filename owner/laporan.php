@@ -3,15 +3,44 @@ $title = 'laporan';
 require 'functions.php';
 require 'layout_header.php';
 $outlet_id = $_SESSION['outlet_id'];
-$bulan = ambilsatubaris($conn,"SELECT SUM(total_harga) AS total FROM detail_transaksi INNER JOIN transaksi ON transaksi.id_transaksi = detail_transaksi.transaksi_id WHERE status_bayar = 'dibayar' AND MONTH(tgl_pembayaran) = MONTH(NOW())");
-$tahun = ambilsatubaris($conn,"SELECT SUM(total_harga) AS total FROM detail_transaksi INNER JOIN transaksi ON transaksi.id_transaksi = detail_transaksi.transaksi_id WHERE status_bayar = 'dibayar' AND YEAR(tgl_pembayaran) = YEAR(NOW())");
-$minggu = ambilsatubaris($conn,"SELECT SUM(total_harga) AS total FROM detail_transaksi INNER JOIN transaksi ON transaksi.id_transaksi = detail_transaksi.transaksi_id WHERE status_bayar = 'dibayar' AND WEEK(tgl_pembayaran) = WEEK(NOW())");
+$bulan = ambilsatubaris($conn,"SELECT SUM(total_harga) AS total FROM detail_transaksi 
+    INNER JOIN transaksi ON transaksi.id_transaksi = detail_transaksi.transaksi_id 
+    INNER JOIN paket ON paket.id_paket = detail_transaksi.paket_id
+    WHERE status_bayar = 'dibayar' 
+    AND MONTH(tgl_pembayaran) = MONTH(NOW())
+    AND paket.outlet_id = '$outlet_id'");
+
+$tahun = ambilsatubaris($conn,"SELECT SUM(total_harga) AS total FROM detail_transaksi 
+    INNER JOIN transaksi ON transaksi.id_transaksi = detail_transaksi.transaksi_id 
+    INNER JOIN paket ON paket.id_paket = detail_transaksi.paket_id
+    WHERE status_bayar = 'dibayar' 
+    AND YEAR(tgl_pembayaran) = YEAR(NOW())
+    AND paket.outlet_id = '$outlet_id'");
+
+$minggu = ambilsatubaris($conn,"SELECT SUM(total_harga) AS total FROM detail_transaksi 
+    INNER JOIN transaksi ON transaksi.id_transaksi = detail_transaksi.transaksi_id 
+    INNER JOIN paket ON paket.id_paket = detail_transaksi.paket_id
+    WHERE status_bayar = 'dibayar' 
+    AND WEEK(tgl_pembayaran) = WEEK(NOW())
+    AND paket.outlet_id = '$outlet_id'");
 
 
-$penjualan = ambildata($conn,"SELECT SUM(detail_transaksi.total_harga) AS total,COUNT(detail_transaksi.paket_id) as jumlah_paket,paket.nama_paket,transaksi.tgl_pembayaran FROM detail_transaksi
+$penjualan = ambildata($conn,"SELECT 
+    SUM(detail_transaksi.total_harga) AS total,
+    COUNT(detail_transaksi.paket_id) as jumlah_paket,
+    paket.nama_paket,
+    transaksi.tgl_pembayaran 
+FROM detail_transaksi
 INNER JOIN transaksi ON transaksi.id_transaksi = detail_transaksi.transaksi_id
 INNER JOIN paket ON paket.id_paket = detail_transaksi.paket_id
-WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROUP BY detail_transaksi.paket_id");
+WHERE transaksi.status_bayar = 'dibayar' 
+AND paket.outlet_id = '$outlet_id' 
+GROUP BY detail_transaksi.paket_id, paket.nama_paket, transaksi.tgl_pembayaran");
+
+// Tambah check data sebelum foreach
+if(!$penjualan) {
+    $penjualan = array(); // Set empty array kalo null
+}
 ?>
 <div class="container-fluid">
     <div class="row bg-title">
