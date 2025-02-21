@@ -10,6 +10,18 @@ if(isset($_POST['btn-simpan'])){
     $harga   = stripslashes($_POST['harga']);
     $outlet_id   = stripslashes($_POST['outlet_id']);
 
+    // Check if nama_paket already exists
+    $check_query = "SELECT COUNT(*) as count FROM paket WHERE nama_paket = '$nama'";
+    $result = ambildata($conn, $check_query);
+    
+    if($result[0]['count'] > 0) {
+        echo "<script>
+                alert('Nama paket sudah ada! Gunakan nama lain.');
+                window.history.back();
+             </script>";
+        exit;
+    }
+
     $query = "INSERT INTO paket (nama_paket,jenis_paket,harga,outlet_id) values ('$nama','$jenis_paket','$harga','$outlet_id')";
     
     $execute = bisa($conn,$query);
@@ -26,11 +38,12 @@ if(isset($_POST['btn-simpan'])){
 
 
 require'layout_header.php';
-?> 
+?>
 <div class="container-fluid">
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Data Master <?= htmlspecialchars($title); ?></h4> </div>
+            <h4 class="page-title">Data Master <?= htmlspecialchars($title); ?></h4>
+        </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
                 <li><a href="outlet.php"><?= htmlspecialchars($title); ?></a></li>
@@ -44,10 +57,12 @@ require'layout_header.php';
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-6">
-                          <a href="javascript:void(0)" onclick="window.history.back();" class="btn btn-primary box-title"><i class="fa fa-arrow-left fa-fw"></i> Kembali</a>
+                        <a href="javascript:void(0)" onclick="window.history.back();"
+                            class="btn btn-primary box-title"><i class="fa fa-arrow-left fa-fw"></i> Kembali</a>
                     </div>
                     <div class="col-md-6 text-right">
-                        <button id="btn-refresh" class="btn btn-primary box-title text-right" title="Refresh Data"><i class="fa fa-refresh" id="ic-refresh"></i></button>
+                        <button id="btn-refresh" class="btn btn-primary box-title text-right" title="Refresh Data"><i
+                                class="fa fa-refresh" id="ic-refresh"></i></button>
                     </div>
                 </div>
             </div>
@@ -57,38 +72,39 @@ require'layout_header.php';
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <div class="white-box">
                 <form method="post" action="">
-                <div class="form-group">
-                    <label>Nama Paket</label>
-                    <input type="text" name="nama_paket" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Jenis Paket</label>
-                    <select name="jenis_paket" class="form-control">
-                        <option value="kiloan">kiloan</option>
-                        <option value="selimut">selimut</option>
-                        <option value="bedcover">bedcover</option>
-                        <option value="kiloan">kiloan</option>
-                        <option value="kaos">kaos</option>
-                        <option value="lain">lain</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Harga</label>
-                    <input type="text" name="harga" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Pilih Outlet</label>
-                    <select name="outlet_id" class="form-control">
-                        <?php foreach ($data as $outlet): ?>
-                            <option value="<?= $outlet['id_outlet'] ?>"><?= htmlspecialchars($outlet['nama_outlet']); ?></option>
-                        <?php endforeach ?>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label>Nama Paket</label>
+                        <input type="text" name="nama_paket" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Paket</label>
+                        <select name="jenis_paket" class="form-control">
+                            <option value="kiloan">kiloan</option>
+                            <option value="selimut">selimut</option>
+                            <option value="bedcover">bedcover</option>
+                            <option value="kiloan">kiloan</option>
+                            <option value="kaos">kaos</option>
+                            <option value="lain">lain</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Harga</label>
+                        <input type="text" name="harga" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Outlet</label>
+                        <select name="outlet_id" class="form-control">
+                            <?php foreach ($data as $outlet): ?>
+                            <option value="<?= $outlet['id_outlet'] ?>"><?= htmlspecialchars($outlet['nama_outlet']); ?>
+                            </option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
 
-                <div class="text-right">
-                    <button type="reset" class="btn btn-danger">Reset</button>
-                    <button type="submit" name="btn-simpan" class="btn btn-primary">Simpan</button>
-                </div>
+                    <div class="text-right">
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                        <button type="submit" name="btn-simpan" class="btn btn-primary">Simpan</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -96,4 +112,4 @@ require'layout_header.php';
 </div>
 <?php
 require'layout_footer.php';
-?> 
+?>

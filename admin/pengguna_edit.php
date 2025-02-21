@@ -13,6 +13,15 @@ if(isset($_POST['btn-simpan'])){
     $username = $_POST['username'];
     $role     = $_POST['role'];
     
+    // Cek username yang sama, kecuali untuk user yang sedang diedit
+    $cek_username = "SELECT * FROM user WHERE username = '$username' AND id_user != '$id_user'";
+    $result = mysqli_query($conn, $cek_username);
+    
+    if(mysqli_num_rows($result) > 0){
+        echo "<script>alert('Username sudah digunakan!');window.history.back();</script>";
+        exit;
+    }
+    
     // Cek password, kalo ada isinya baru update password
     if(!empty($_POST['password'])){
         $pass = md5($_POST['password']);
