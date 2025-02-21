@@ -35,6 +35,54 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <style>
+    /* Navbar & Header */
+    .navbar {
+        background-color: #0d1b2a !important;
+    }
+
+    .navbar-header {
+        background-color: #0d1b2a !important;
+    }
+
+    .top-left-part {
+        background-color: #0d1b2a !important;
+    }
+
+    .logo b,
+    .logo span {
+        color: #e0e1dd !important;
+    }
+
+    /* Profile section di header */
+    .profile-pic b {
+        color: white !important;
+    }
+
+    .nav.navbar-top-links>li>a {
+        color: white !important;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        background-color: #0d1b2a !important;
+    }
+
+    .sidebar-nav {
+        background-color: #0d1b2a !important;
+    }
+
+    /* Text di sidebar */
+    .sidebar .nav-second-level li a,
+    .sidebar .nav>li>a {
+        color: white !important;
+    }
+
+    /* Sidebar header */
+    .sidebar-head h3 span {
+        color: white !important;
+    }
+    </style>
 </head>
 
 <body class="fix-header">
@@ -66,7 +114,7 @@
                         </b>
                         <!-- Logo text image you can use text also -->
                         <span class="hidden-xs text-dark">
-                            doydev
+                            DOYDEV
                         </span>
                     </a>
                 </div>
