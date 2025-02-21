@@ -38,6 +38,31 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <!-- Your custom colors -->
+    <style>
+    .navbar {
+        background-color: #2196F3 !important;
+    }
+
+    .logo b,
+    .logo span {
+        color: black !important;
+    }
+
+    .sidebar {
+        background-color: #1976D2 !important;
+    }
+
+    .sidebar-nav {
+        background-color: #1976D2 !important;
+    }
+
+    /* Ganti warna text sidebar */
+    .sidebar .nav-second-level li a,
+    .sidebar .nav>li>a {
+        color: white !important;
+    }
+    </style>
 </head>
 
 <body class="fix-header">
