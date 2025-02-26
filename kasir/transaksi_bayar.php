@@ -24,11 +24,12 @@ if(isset($_POST['btn-simpan'])) {
 
 
 require'layout_header.php';
-?> 
+?>
 <div class="container-fluid">
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Data Master <?= $title ?></h4> </div>
+            <h4 class="page-title">Data Master <?= $title ?></h4>
+        </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
                 <li><a href="outlet.php"><?= $title ?></a></li>
@@ -42,10 +43,12 @@ require'layout_header.php';
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-6">
-                          <a href="javascript:void(0)" onclick="window.history.back();" class="btn btn-primary box-title"><i class="fa fa-arrow-left fa-fw"></i> Kembali</a>
+                        <a href="javascript:void(0)" onclick="window.history.back();"
+                            class="btn btn-primary box-title"><i class="fa fa-arrow-left fa-fw"></i> Kembali</a>
                     </div>
                     <div class="col-md-6 text-right">
-                        <button id="btn-refresh" class="btn btn-primary box-title text-right" title="Refresh Data"><i class="fa fa-refresh" id="ic-refresh"></i></button>
+                        <button id="btn-refresh" class="btn btn-primary box-title text-right" title="Refresh Data"><i
+                                class="fa fa-refresh" id="ic-refresh"></i></button>
                     </div>
                 </div>
             </div>
@@ -55,28 +58,32 @@ require'layout_header.php';
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <div class="white-box">
                 <form method="post" action="transaksi_bayar.php?id=<?= $data['id_transaksi'] ?>" id="form-submit">
-                <div class="form-group">
-                    <label>Kode Invoice</label>
-                    <input type="text" name="kode_invoice" value="<?= $data['kode_invoice'] ?>" class="form-control" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Nama Member</label>
-                    <input type="text" name="nama_member" value="<?= $data['nama_member'] ?>" class="form-control" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Total Yang Harus Di Bayar</label>
-                    <input type="text" name="total_harga" value="<?= $data['total_harga'] ?>" class="form-control" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Masukan Jumlah Pembayaran</label>
-                    <input type="number" name="total_bayar" id="total_bayar"  class="form-control">
-                    <?php if (isset($_GET['msg'])): ?>
+                    <div class="form-group">
+                        <label>Kode Invoice</label>
+                        <input type="text" name="kode_invoice" value="<?= $data['kode_invoice'] ?>" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Member</label>
+                        <input type="text" name="nama_member" value="<?= $data['nama_member'] ?>" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Yang Harus Di Bayar</label>
+                        <input type="text" name="total_harga"
+                            value="<?= number_format($data['total_harga'], 0, ',', '.') ?>" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Masukan Jumlah Pembayaran</label>
+                        <input type="number" name="total_bayar" id="total_bayar" class="form-control">
+                        <?php if (isset($_GET['msg'])): ?>
                         <small class="text-danger"><?= $_GET['msg'] ?></small>
-                    <?php endif ?>
-                </div>
-                <div class="text-right">
-                    <button type="submit" name="btn-simpan" id="btn-simpan" class="btn btn-primary">Bayar</utton>
-                </div>
+                        <?php endif ?>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" name="btn-simpan" id="btn-simpan" class="btn btn-primary">Bayar</utton>
+                    </div>
                 </form>
             </div>
         </div>
@@ -84,4 +91,4 @@ require'layout_header.php';
 </div>
 <?php
 require'layout_footer.php';
-?> 
+?>

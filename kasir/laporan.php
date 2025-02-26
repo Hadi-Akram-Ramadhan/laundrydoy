@@ -115,7 +115,7 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
                                 <td><?= htmlspecialchars($transaksi['nama_paket']) ?></td>
                                 <td><?= htmlspecialchars($transaksi['jumlah_paket']) ?></td>
                                 <td><?= htmlspecialchars($transaksi['tgl_pembayaran']) ?></td>
-                                <td><?= htmlspecialchars($transaksi['total']) ?></td>
+                                <td>Rp <?= number_format($transaksi['total'], 0, ',', '.') ?></td>
                             </tr>
                             <?php endforeach; ?>
                             <?php endif; ?>

@@ -36,9 +36,10 @@ h3 {
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3>Pesanan Atas Nama <?= $data['nama_member'] ?> Behasil Di Simpan</h3>
+                        <h3>Pesanan Atas Nama <?= $data['nama_member'] ?> Berhasil Di Simpan</h3>
                         <strong>Kode Invoice <?= $data['kode_invoice'] ?></strong><br>
-                        <strong>Total Pembayaran <?= $data['total_harga'] ?></strong><br><br>
+                        <strong>Total Pembayaran
+                            Rp.<?= number_format($data['total_harga'], 0, ',', '.') ?></strong><br><br>
                         <a href="transaksi.php" class="btn btn-primary">Kembali Ke Menu Utama</a>
                     </div>
                 </div>

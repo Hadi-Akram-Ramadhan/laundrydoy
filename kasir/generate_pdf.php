@@ -35,7 +35,7 @@ foreach($penjualan as $transaksi) {
     $pdf->Cell(50,10,$transaksi['nama_paket'],1);
     $pdf->Cell(40,10,$transaksi['jumlah_paket'],1,0,'C');
     $pdf->Cell(50,10,$transaksi['tgl_pembayaran'],1);
-    $pdf->Cell(40,10,$transaksi['total'],1,0,'R');
+    $pdf->Cell(40,10,'Rp ' . number_format($transaksi['total'], 0, ',', '.'),1,0,'R');
     $pdf->Ln();
 }
 

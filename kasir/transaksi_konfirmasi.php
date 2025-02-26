@@ -50,7 +50,7 @@ if(!$data) $data = [];
                                 <td><?= $transaksi['kode_invoice'] ?></td>
                                 <td><?= $transaksi['nama_member'] ?></td>
                                 <td><?= $transaksi['status'] ?></td>
-                                <td><?= $transaksi['total_harga'] ?></td>
+                                <td>Rp.<?= number_format($transaksi['total_harga'], 0, ',', '.') ?></td>
                                 <td align="center">
                                     <a href="transaksi_bayar.php?id=<?= $transaksi['id_transaksi']; ?>"
                                         data-toggle="tooltip" data-placement="bottom" title="Pilih"
