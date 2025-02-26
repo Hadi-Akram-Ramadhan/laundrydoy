@@ -47,15 +47,19 @@ $data = ambildata($conn,$query);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if(isset($data) != null): ?>
+                            <?php if(empty($data)): ?>
+                            <tr>
+                                <td colspan="7" class="text-center">Tidak ada data transaksi</td>
+                            </tr>
+                            <?php else: ?>
                             <?php foreach($data as $transaksi): ?>
                             <tr>
                                 <td></td>
-                                <td><?= $transaksi['kode_invoice'] ?></td>
-                                <td><?= $transaksi['nama_member'] ?></td>
-                                <td><?= $transaksi['status'] ?></td>
-                                <td><?= $transaksi['status_bayar'] ?></td>
-                                <td><?= $transaksi['total_harga'] ?></td>
+                                <td><?= htmlspecialchars($transaksi['kode_invoice']) ?></td>
+                                <td><?= htmlspecialchars($transaksi['nama_member']) ?></td>
+                                <td><?= htmlspecialchars($transaksi['status']) ?></td>
+                                <td><?= htmlspecialchars($transaksi['status_bayar']) ?></td>
+                                <td><?= htmlspecialchars($transaksi['total_harga']) ?></td>
                                 <td align="center">
                                     <a href="transaksi_detail.php?id=<?= $transaksi['id_transaksi']; ?>"
                                         data-toggle="tooltip" data-placement="bottom" title="Edit"

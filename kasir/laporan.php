@@ -101,15 +101,21 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
                             </tr>
                         </thead>
                         <tbody>
+                            <?php if(empty($penjualan)): ?>
+                            <tr>
+                                <td colspan="5" class="text-center">Tidak ada data penjualan</td>
+                            </tr>
+                            <?php else: ?>
                             <?php $no=1; foreach($penjualan as $transaksi): ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-                                <td><?= $transaksi['nama_paket'] ?></td>
-                                <td><?= $transaksi['jumlah_paket'] ?></td>
-                                <td><?= $transaksi['tgl_pembayaran'] ?></td>
-                                <td><?= $transaksi['total'] ?></td>
+                                <td><?= htmlspecialchars($transaksi['nama_paket']) ?></td>
+                                <td><?= htmlspecialchars($transaksi['jumlah_paket']) ?></td>
+                                <td><?= htmlspecialchars($transaksi['tgl_pembayaran']) ?></td>
+                                <td><?= htmlspecialchars($transaksi['total']) ?></td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>

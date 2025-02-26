@@ -169,6 +169,26 @@
     .page-title {
         color: #e0e1dd !important;
     }
+
+    /* Full width & height */
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .fix-header {
+        width: 100%;
+        height: 100%;
+    }
+
+    #wrapper {
+        min-height: 100%;
+        width: 100%;
+        position: relative;
+    }
     </style>
 </head>
 
@@ -212,8 +232,8 @@
                             href="javascript:void(0)"><i class="fa fa-bars"></i></a>
                     </li>
                     <li>
-                        <a class="profile-pic" href="#"> b
-                            class="hidden-xs"><?php echo $_SESSION['nama_user']?></b></a>
+                        <a class="profile-pic" href="#"> <b
+                                class="hidden-xs"><?php echo $_SESSION['nama_user']?></b></a>
                     </li>
                 </ul>
             </div>
