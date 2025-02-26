@@ -58,7 +58,7 @@ $data = ambildata($conn,$query);
                                 <td><?= htmlspecialchars($transaksi['nama_member']) ?></td>
                                 <td><?= htmlspecialchars($transaksi['status']) ?></td>
                                 <td><?= htmlspecialchars($transaksi['status_bayar']) ?></td>
-                                <td><?= htmlspecialchars($transaksi['total_harga']) ?></td>
+                                <td>Rp.<?= number_format($transaksi['total_harga'], 0, ',', '.') ?></td>
                                 <td align="center">
                                     <a href="transaksi_detail.php?id=<?= $transaksi['id_transaksi']; ?>"
                                         data-toggle="tooltip" data-placement="bottom" title="Edit"

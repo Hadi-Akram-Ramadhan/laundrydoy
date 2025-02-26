@@ -1,4 +1,3 @@
-
 <?php
 require 'functions.php';
 $status = ['baru','proses','selesai','diambil'];
@@ -22,11 +21,12 @@ if(isset($_POST['btn-simpan'])){
 
 require'layout_header.php';
 
-?> 
+?>
 <div class="container-fluid">
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Data Master Transaksi</h4> </div>
+            <h4 class="page-title">Data Master Transaksi</h4>
+        </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
                 <li><a href="outlet.php">Transaksi</a></li>
@@ -40,7 +40,8 @@ require'layout_header.php';
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-6">
-                          <a href="javascript:void(0)" onclick="window.history.back();" class="btn btn-primary box-title"><i class="fa fa-arrow-left fa-fw"></i> Kembali</a>
+                        <a href="javascript:void(0)" onclick="window.history.back();"
+                            class="btn btn-primary box-title"><i class="fa fa-arrow-left fa-fw"></i> Kembali</a>
                     </div>
                 </div>
             </div>
@@ -50,49 +51,58 @@ require'layout_header.php';
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <div class="white-box">
                 <form method="post" action="">
-                <div class="form-group">
-                    <label>Kode Invoice</label>
-                    <input type="text" name="kode_invoice" class="form-control" readonly="" value="<?= $data['kode_invoice'] ?>">
-                </div>
-                <div class="form-group">
-                    <label>Outlet</label>
-                    <input type="text" name="username" class="form-control" readonly="" value="<?= $data['nama_outlet'] ?>">
-                </div>
-                <div class="form-group">
-                    <label>Pelanggan</label>
-                    <input type="text" name="password" class="form-control" readonly="" value="<?= $data['nama_member'] ?>"> 
-                </div>
-                <div class="form-group">
-                    <label>Jenis Paket</label>
-                    <input type="text" name="password" class="form-control" readonly="" value="<?= $data['nama_paket'] ?>"> 
-                </div>
-                <div class="form-group">
-                    <label>Jumlah</label>
-                    <input readonly=""   type="text" name="qty" class="form-control" value="<?= $data['qty'] ?>"> 
-                </div>
-                <div class="form-group">
-                    <label>Total Harga</label>
-                    <input readonly=""   type="text" name="biaya_tambahan" class="form-control" value="<?= $data['total_harga'] ?>"> 
-                </div>
-                <?php if ($data['total_bayar'] > 0 ): ?>
+                    <div class="form-group">
+                        <label>Kode Invoice</label>
+                        <input type="text" name="kode_invoice" class="form-control" readonly=""
+                            value="<?= $data['kode_invoice'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Outlet</label>
+                        <input type="text" name="username" class="form-control" readonly=""
+                            value="<?= $data['nama_outlet'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Pelanggan</label>
+                        <input type="text" name="password" class="form-control" readonly=""
+                            value="<?= $data['nama_member'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Paket</label>
+                        <input type="text" name="password" class="form-control" readonly=""
+                            value="<?= $data['nama_paket'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Jumlah</label>
+                        <input readonly="" type="text" name="qty" class="form-control" value="<?= $data['qty'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Total Harga</label>
+                        <input readonly="" type="text" name="biaya_tambahan" class="form-control"
+                            value="Rp.<?= number_format($data['total_harga'], 0, ',', '.') ?>">
+                    </div>
+                    <?php if ($data['total_bayar'] > 0 ): ?>
                     <div class="form-group">
                         <label>Total Bayar</label>
-                        <input readonly=""   type="text" name="biaya_tambahan" class="form-control" value="<?= $data['total_bayar'] ?>"> 
+                        <input readonly="" type="text" name="biaya_tambahan" class="form-control"
+                            value="Rp.<?= number_format($data['total_bayar'], 0, ',', '.') ?>">
                     </div>
                     <div class="form-group">
                         <label>Di Bayar Pada Tanggal </label>
-                        <input readonly=""   type="text" name="biaya_tambahan" class="form-control" value="<?= $data['tgl_pembayaran'] ?>"> 
+                        <input readonly="" type="text" name="biaya_tambahan" class="form-control"
+                            value="<?= $data['tgl_pembayaran'] ?>">
                     </div>
-                <?php else: ?>
+                    <?php else: ?>
                     <div class="form-group">
-                    <label>Total Bayar</label>
-                    <input readonly=""   type="text" name="biaya_tambahan" class="form-control" value="Belum Melakukan Pembayaran"> 
-                </div>
-                <div class="form-group">
-                    <label>Batas Waktu Pembayaran</label>
-                    <input readonly=""   type="text" name="biaya_tambahan" class="form-control" value="<?= $data['batas_waktu'] ?>"> 
-                </div>
-                <?php  endif;?>
+                        <label>Total Bayar</label>
+                        <input readonly="" type="text" name="biaya_tambahan" class="form-control"
+                            value="Belum Melakukan Pembayaran">
+                    </div>
+                    <div class="form-group">
+                        <label>Batas Waktu Pembayaran</label>
+                        <input readonly="" type="text" name="biaya_tambahan" class="form-control"
+                            value="<?= $data['batas_waktu'] ?>">
+                    </div>
+                    <?php  endif;?>
                     <div class="form-group">
                         <label>Status Transaksi</label>
                         <select name="status" class="form-control">
@@ -105,9 +115,9 @@ require'layout_header.php';
                         </select>
                         <small>Klik Tombol Ubah Untuk Menyimpan Perubahan Transaksi</small>
                     </div>
-                <div class="text-right">
-                    <button type="submit" name="btn-simpan" class="btn btn-primary">Ubah</button>
-                </div>
+                    <div class="text-right">
+                        <button type="submit" name="btn-simpan" class="btn btn-primary">Ubah</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -115,4 +125,4 @@ require'layout_header.php';
 </div>
 <?php
 require'layout_footer.php';
-?> 
+?>

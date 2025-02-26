@@ -53,7 +53,7 @@ $data = ambildata($conn,$query);
                                 <td></td>
                                 <td><?= htmlspecialchars($paket['nama_paket']); ?></td>
                                 <td><?= htmlspecialchars($paket['jenis_paket']); ?></td>
-                                <td><?= htmlspecialchars($paket['harga']); ?></td>
+                                <td>Rp.<?= number_format($paket['harga'], 0, ',', '.'); ?></td>
                                 <td><?= htmlspecialchars($paket['nama_outlet']); ?></td>
                                 <td align="center">
                                     <div class="btn-group" role="group" aria-label="Basic example">

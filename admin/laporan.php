@@ -38,7 +38,8 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                         <div id="sparklinedash"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
-                            class="counter text-success"><?= htmlspecialchars($tahun['total']); ?></span></li>
+                            class="counter text-success">Rp.<?= number_format($tahun['total'], 0, ',', '.'); ?></span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,7 +51,8 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                         <div id="sparklinedash2"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span
-                            class="counter text-purple"><?= htmlspecialchars($bulan['total']); ?></span></li>
+                            class="counter text-purple">Rp.<?= number_format($bulan['total'], 0, ',', '.'); ?></span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -62,7 +64,8 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                         <div id="sparklinedash3"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
-                            class="counter text-info"><?= htmlspecialchars($minggu['total']); ?></span></li>
+                            class="counter text-info">Rp.<?= number_format($minggu['total'], 0, ',', '.'); ?></span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -94,7 +97,7 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                                 <td><?= htmlspecialchars($transaksi['nama_paket']); ?></td>
                                 <td><?= htmlspecialchars($transaksi['jumlah_paket']); ?></td>
                                 <td><?= htmlspecialchars($transaksi['tgl_pembayaran']); ?></td>
-                                <td><?= htmlspecialchars($transaksi['total']); ?></td>
+                                <td>Rp.<?= number_format($transaksi['total'], 0, ',', '.'); ?></td>
                             </tr>
                             <?php endforeach; ?>
                             <?php endif; ?>
