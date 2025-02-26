@@ -49,38 +49,41 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
     <!-- .row -->
     <div class="row">
         <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="white-box analytics-info">
+            <div class="white-box analytics-info" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 <h3 class="box-title">Penghasilan Tahun Ini</h3>
                 <ul class="list-inline two-part">
-                    <li>
-                        <div id="sparklinedash"></div>
+                    <li class="text-right">
+                        <i class="ti-arrow-up text-success"></i>
+                        <span class="counter text-success" style="font-size: 24px; font-weight: bold;">
+                            Rp <?= number_format($tahun['total'],0,',','.') ?>
+                        </span>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
-                            class="counter text-success"><?= $tahun['total'] ?></span></li>
                 </ul>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="white-box analytics-info">
+            <div class="white-box analytics-info" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 <h3 class="box-title">Penghasilan Bulan ini</h3>
                 <ul class="list-inline two-part">
-                    <li>
-                        <div id="sparklinedash2"></div>
+                    <li class="text-right">
+                        <i class="ti-arrow-up text-purple"></i>
+                        <span class="counter text-purple" style="font-size: 24px; font-weight: bold;">
+                            Rp <?= number_format($bulan['total'],0,',','.') ?>
+                        </span>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span
-                            class="counter text-purple"><?= $bulan['total'] ?></span></li>
                 </ul>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="white-box analytics-info">
+            <div class="white-box analytics-info" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 <h3 class="box-title">Penghasilan Minggu Ini</h3>
                 <ul class="list-inline two-part">
-                    <li>
-                        <div id="sparklinedash3"></div>
+                    <li class="text-right">
+                        <i class="ti-arrow-up text-info"></i>
+                        <span class="counter text-info" style="font-size: 24px; font-weight: bold;">
+                            Rp <?= number_format($minggu['total'],0,',','.') ?>
+                        </span>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
-                            class="counter text-info"><?= $minggu['total'] ?></span></li>
                 </ul>
             </div>
         </div>
@@ -124,6 +127,50 @@ WHERE transaksi.status_bayar = 'dibayar' AND paket.outlet_id = '$outlet_id' GROU
         </div>
     </div>
 </div>
+<script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Sparkline charts
+    $("#sparklinedash").sparkline([0, 23, 43, 35, 44, 45, 56, 37, 40, 45, 56, 78, 90], {
+        type: 'line',
+        width: '100%',
+        height: '50',
+        lineColor: '#13dafe',
+        fillColor: 'transparent',
+        spotColor: '#13dafe',
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined
+    });
+
+    $("#sparklinedash2").sparkline([0, 13, 33, 35, 44, 45, 56, 37, 40, 45, 56, 78, 90], {
+        type: 'line',
+        width: '100%',
+        height: '50',
+        lineColor: '#6164c1',
+        fillColor: 'transparent',
+        spotColor: '#6164c1',
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined
+    });
+
+    $("#sparklinedash3").sparkline([0, 53, 43, 35, 44, 65, 56, 37, 40, 45, 56, 78, 90], {
+        type: 'line',
+        width: '100%',
+        height: '50',
+        lineColor: '#13dafe',
+        fillColor: 'transparent',
+        spotColor: '#13dafe',
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined
+    });
+});
+</script>
 <?php
 require 'layout_footer.php';
 ?>
