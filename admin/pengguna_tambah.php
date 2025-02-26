@@ -17,6 +17,7 @@ if(isset($_POST['btn-simpan'])){
             $outlet_id = $_POST['outlet_id'];
             $query = "INSERT INTO user (nama_user,username,password,role,outlet_id) values ('$nama','$username','$pass','$role','$outlet_id')";
         }elseif($role == 'owner'){
+            $outlet_id = $_POST['outlet_id'];
             $query = "INSERT INTO user (nama_user,username,password,role,outlet_id) values ('$nama','$username','$pass','$role','$outlet_id')";
         }else{
             $query = "INSERT INTO user (nama_user,username,password,role) values ('$nama','$username','$pass','$role')";
