@@ -78,13 +78,13 @@ require'layout_header.php';
                     <div class="form-group">
                         <label>Total Harga</label>
                         <input readonly="" type="text" name="biaya_tambahan" class="form-control"
-                            value="<?= $data['total_harga'] ?>">
+                            value="<?= rupiah($data['total_harga']) ?>">
                     </div>
                     <?php if ($data['total_bayar'] > 0 ): ?>
                     <div class="form-group">
                         <label>Total Bayar</label>
                         <input readonly="" type="text" name="biaya_tambahan" class="form-control"
-                            value="<?= $data['total_bayar'] ?>">
+                            value="<?= rupiah($data['total_bayar']) ?>">
                     </div>
                     <div class="form-group">
                         <label>Di Bayar Pada Tanggal </label>

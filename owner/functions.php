@@ -46,4 +46,8 @@ function hapus($where,$table,$redirect){
     echo $query;
 }
 
+function rupiah($angka){
+    return "Rp " . number_format($angka, 0, ',', '.');
+}
+
 ?>
