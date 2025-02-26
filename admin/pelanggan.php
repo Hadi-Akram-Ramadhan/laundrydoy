@@ -44,20 +44,25 @@ $data = ambildata($conn,$query);
                             </tr>
                         </thead>
                         <tbody>
+                            <?php if(empty($data)): ?>
+                            <tr>
+                                <td colspan="7" class="text-center">Tidak ada data</td>
+                            </tr>
+                            <?php else: ?>
                             <?php foreach($data as $member): ?>
                             <tr>
                                 <td></td>
-                                <td><?= $member['nama_member'] ?></td>
-                                <td><?= $member['alamat_member'] ?></td>
-                                <td><?= $member['jenis_kelamin'] ?></td>
-                                <td><?= $member['telp_member'] ?></td>
-                                <td><?= $member['no_ktp'] ?></td>
+                                <td><?= htmlspecialchars($member['nama_member']) ?></td>
+                                <td><?= htmlspecialchars($member['alamat_member']) ?></td>
+                                <td><?= htmlspecialchars($member['jenis_kelamin']) ?></td>
+                                <td><?= htmlspecialchars($member['telp_member']) ?></td>
+                                <td><?= htmlspecialchars($member['no_ktp']) ?></td>
                                 <td align="center">
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="pelanggan_edit.php?id=<?= $member['id_member']; ?>"
                                             data-toggle="tooltip" data-placement="bottom" title="Edit"
                                             class="btn btn-success"><i class="fa fa-edit"></i></a>
-                                        <a href="pengguna_hapus.php?id=<?= $member['id_member']; ?>"
+                                        <a href="pelanggan_hapus.php?id=<?= $member['id_member']; ?>"
                                             onclick="return confirm('Yakin hapus data ? ');" data-toggle="tooltip"
                                             data-placement="bottom" title="Hapus" class="btn btn-danger"><i
                                                 class="fa fa-trash"></i></a>
@@ -65,6 +70,7 @@ $data = ambildata($conn,$query);
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>

@@ -43,16 +43,17 @@ $data = ambildata($conn,$query);
                             </tr>
                         </thead>
                         <tbody>
+                            <?php if(empty($data)): ?>
+                            <tr>
+                                <td colspan="6" class="text-center">Tidak ada data</td>
+                            </tr>
+                            <?php else: ?>
                             <?php foreach($data as $outlet): ?>
                             <tr>
                                 <td></td>
                                 <td><?= htmlspecialchars($outlet['nama_outlet']); ?></td>
                                 <td>
-                                    <?php if($outlet['nama_user'] == null){
-                                            echo 'Belum Ada Owner';
-                                        }else{
-                                            echo htmlspecialchars($outlet['nama_user']);
-                                        } ?>
+                                    <?= $outlet['nama_user'] ? htmlspecialchars($outlet['nama_user']) : 'Belum Ada Owner'; ?>
                                 </td>
                                 <td><?= htmlspecialchars($outlet['telp_outlet']); ?></td>
                                 <td><?= htmlspecialchars($outlet['alamat_outlet']); ?></td>
@@ -69,6 +70,7 @@ $data = ambildata($conn,$query);
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
