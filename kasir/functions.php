@@ -11,7 +11,7 @@ if($_SESSION){
     header('location:../index.php');
 }
 
-$conn = mysqli_connect('localhost','root','','ujikom_laundry');
+$conn = mysqli_connect('localhost','root','','laundrydoy');
 
 function ambildata($conn,$query){
     $data = mysqli_query($conn,$query);

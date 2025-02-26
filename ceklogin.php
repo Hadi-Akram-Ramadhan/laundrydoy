@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect('localhost','root','','ujikom_laundry');
+$conn = mysqli_connect('localhost','root','','laundrydoy');
 
 $username = $_POST['username'];
 $password = md5($_POST['password']);

@@ -1,4 +1,4 @@
 # phpnative-aplikasi-laundry
 
-Silahkan buat database dengan nama ujikom_laundry dan import db nya
+Silahkan buat database dengan nama laundrydoy dan import db nya
 "# ukom-laundry-native" 
