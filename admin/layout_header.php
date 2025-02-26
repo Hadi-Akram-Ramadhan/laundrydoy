@@ -174,8 +174,29 @@
         color: #e0e1dd !important;
     }
 
-    .fix-header {
+    .fix-header,
+    body {
         height: 100%;
+    }
+
+    /* Full width & height */
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .fix-header {
+        width: 100%;
+        height: 100%;
+    }
+
+    #wrapper {
+        min-height: 100%;
+        width: 100%;
+        position: relative;
     }
     </style>
 </head>

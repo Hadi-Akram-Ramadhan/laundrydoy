@@ -15,7 +15,8 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
 <div class="container-fluid">
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Dashboard</h4> </div>
+            <h4 class="page-title">Dashboard</h4>
+        </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
                 <li><a href="#">Dashboard</a></li>
@@ -36,7 +37,8 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                     <li>
                         <div id="sparklinedash"></div>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success"><?= htmlspecialchars($tahun['total']); ?></span></li>
+                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
+                            class="counter text-success"><?= htmlspecialchars($tahun['total']); ?></span></li>
                 </ul>
             </div>
         </div>
@@ -47,7 +49,8 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                     <li>
                         <div id="sparklinedash2"></div>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple"><?= htmlspecialchars($bulan['total']); ?></span></li>
+                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span
+                            class="counter text-purple"><?= htmlspecialchars($bulan['total']); ?></span></li>
                 </ul>
             </div>
         </div>
@@ -58,7 +61,8 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                     <li>
                         <div id="sparklinedash3"></div>
                     </li>
-                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info"><?= htmlspecialchars($minggu['total']); ?></span></li>
+                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
+                            class="counter text-info"><?= htmlspecialchars($minggu['total']); ?></span></li>
                 </ul>
             </div>
         </div>
@@ -79,15 +83,21 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                             </tr>
                         </thead>
                         <tbody>
+                            <?php if(empty($penjualan)): ?>
+                            <tr>
+                                <td colspan="5" class="text-center">Tidak ada data penjualan</td>
+                            </tr>
+                            <?php else: ?>
                             <?php $no=1; foreach($penjualan as $transaksi): ?>
-                                <tr>
-                                    <td><?= $no++ ?></td>
-                                    <td><?= htmlspecialchars($transaksi['nama_paket']); ?></td>
-                                    <td><?= htmlspecialchars($transaksi['jumlah_paket']); ?></td>
-                                    <td><?= htmlspecialchars($transaksi['tgl_pembayaran']); ?></td>
-                                    <td><?= htmlspecialchars($transaksi['total']); ?></td>                                    
-                                </tr>
+                            <tr>
+                                <td><?= $no++ ?></td>
+                                <td><?= htmlspecialchars($transaksi['nama_paket']); ?></td>
+                                <td><?= htmlspecialchars($transaksi['jumlah_paket']); ?></td>
+                                <td><?= htmlspecialchars($transaksi['tgl_pembayaran']); ?></td>
+                                <td><?= htmlspecialchars($transaksi['total']); ?></td>
+                            </tr>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -98,4 +108,4 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
 </div>
 <?php
 require 'layout_footer.php';
-?> 
+?>

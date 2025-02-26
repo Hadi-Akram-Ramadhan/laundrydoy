@@ -84,6 +84,11 @@ $data = ambildata($conn,$query);
                             </tr>
                         </thead>
                         <tbody>
+                            <?php if(empty($data)): ?>
+                            <tr>
+                                <td colspan="7" class="text-center">Tidak ada transaksi terbaru</td>
+                            </tr>
+                            <?php else: ?>
                             <?php $no=1; foreach($data as $transaksi): ?>
                             <tr>
                                 <td><?= $no++ ?></td>
@@ -99,6 +104,7 @@ $data = ambildata($conn,$query);
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
