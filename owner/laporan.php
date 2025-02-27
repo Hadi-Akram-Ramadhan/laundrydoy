@@ -68,7 +68,7 @@ if(!$penjualan) {
                         <div id="sparklinedash"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
-                            class="counter text-success"><?= rupiah($tahun['total']) ?></span></li>
+                            class="counter text-success"><?= $tahun['total'] ?></span></li>
                 </ul>
             </div>
         </div>
@@ -80,7 +80,7 @@ if(!$penjualan) {
                         <div id="sparklinedash2"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span
-                            class="counter text-purple"><?= rupiah($bulan['total']) ?></span></li>
+                            class="counter text-purple"><?= $bulan['total'] ?></span></li>
                 </ul>
             </div>
         </div>
@@ -92,7 +92,7 @@ if(!$penjualan) {
                         <div id="sparklinedash3"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
-                            class="counter text-info"><?= rupiah($minggu['total']) ?></span></li>
+                            class="counter text-info"><?= $minggu['total'] ?></span></li>
                 </ul>
             </div>
         </div>

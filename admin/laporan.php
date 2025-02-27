@@ -35,10 +35,10 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                 <h3 class="box-title">Penghasilan Tahun Ini</h3>
                 <ul class="list-inline two-part">
                     <li>
-                        <div id="sparklinedash"></div>
+                        <div id="sparklinedash" class="chart-container"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
-                            class="counter text-success">Rp.<?= number_format($tahun['total'], 0, ',', '.'); ?></span>
+                            class="counter text-success"><?= $tahun['total'] ?? 0 ?></span>
                     </li>
                 </ul>
             </div>
@@ -48,10 +48,10 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                 <h3 class="box-title">Penghasilan Bulan ini</h3>
                 <ul class="list-inline two-part">
                     <li>
-                        <div id="sparklinedash2"></div>
+                        <div id="sparklinedash2" class="chart-container"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span
-                            class="counter text-purple">Rp.<?= number_format($bulan['total'], 0, ',', '.'); ?></span>
+                            class="counter text-purple"><?= $bulan['total'] ?? 0 ?></span>
                     </li>
                 </ul>
             </div>
@@ -61,10 +61,10 @@ WHERE transaksi.status_bayar = 'dibayar' GROUP BY detail_transaksi.paket_id");
                 <h3 class="box-title">Penghasilan Minggu Ini</h3>
                 <ul class="list-inline two-part">
                     <li>
-                        <div id="sparklinedash3"></div>
+                        <div id="sparklinedash3" class="chart-container"></div>
                     </li>
                     <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
-                            class="counter text-info">Rp.<?= number_format($minggu['total'], 0, ',', '.'); ?></span>
+                            class="counter text-info"><?= $minggu['total'] ?? 0 ?></span>
                     </li>
                 </ul>
             </div>
