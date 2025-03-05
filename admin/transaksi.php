@@ -40,7 +40,7 @@ $data = ambildata($conn,$query);
                                 <th>Invoice</th>
                                 <th>Member</th>
                                 <th>Status</th>
-                                <th>Pemabayaran</th>
+                                <th>Pembayaran</th>
                                 <th>Total Harga</th>
                                 <th width="15%">Aksi</th>
                             </tr>
